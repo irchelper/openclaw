@@ -321,8 +321,7 @@ export function expandQueryForFts(query: string): {
 
   // Build expanded query: original terms OR extracted keywords
   // This ensures both exact matches and keyword matches are found
-  const expanded =
-    keywords.length > 0 ? `${original} OR ${keywords.join(" OR ")}` : original;
+  const expanded = keywords.length > 0 ? `${original} OR ${keywords.join(" OR ")}` : original;
 
   return { original, keywords, expanded };
 }
