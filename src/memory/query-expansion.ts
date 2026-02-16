@@ -255,7 +255,7 @@ function tokenize(text: string): string[] {
     // Check if segment contains CJK characters
     if (/[\u4e00-\u9fff]/.test(segment)) {
       // For Chinese, extract character n-grams (unigrams and bigrams)
-      const chars = [...segment].filter((c) => /[\u4e00-\u9fff]/.test(c));
+      const chars = Array.from(segment).filter((c) => /[\u4e00-\u9fff]/.test(c));
       // Add individual characters
       tokens.push(...chars);
       // Add bigrams for better phrase matching
